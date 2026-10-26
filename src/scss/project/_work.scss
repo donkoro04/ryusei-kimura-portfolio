@@ -136,8 +136,14 @@
     max-width: 808px;
     margin: 0;
 
-    // SP：Figma の書き出し値は 80px 24px だが、画面上の間隔は縦横とも 24px
-    @include sp { gap: 24px; }
+    // SP：2列のグリッド（ソフト｜期間 / メンバー｜担当範囲）。
+    // 列幅を揃えて持つので、画面幅が伸び縮みしても上下の列が必ず揃う（Figma 5170:11572）
+    @include sp {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 42px 64px;
+      max-width: none;
+    }
   }
 
   &__meta-item {
@@ -148,6 +154,8 @@
 
     &--period { width: 104px; }
     &--wide   { width: 180px; }
+
+    @include sp { width: auto; max-width: none; }
   }
 
   &__meta-label {
@@ -184,7 +192,8 @@
     list-style: decimal;
     white-space: nowrap;
 
-    @include sp { padding-left: 18px; }
+    // SP：列幅で折り返す（Figma どおり）
+    @include sp { padding-left: 18px; white-space: normal; }
   }
 
   // メインビジュアル（瑠玖は画像未支給のためキーカラーで表示）
