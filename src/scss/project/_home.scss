@@ -1,0 +1,164 @@
+@use "../foundation/mixins" as *;
+
+// ==========================================================
+// トップページ
+// ==========================================================
+
+// ---------- メインビジュアル ----------
+.p-hero {
+  overflow: hidden;
+  padding: 100px 0 40px;
+
+  @include sp { padding-top: 50px; }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 160px;
+    max-width: 1162px;
+
+    @include sp { gap: 80px; }
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  // 名前の下 80px にイラストを重ねる
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    margin-bottom: -80px;
+
+    @include sp { gap: 8px; margin-bottom: -29px; }
+  }
+
+  &__occupation {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-inline: 120px;
+
+    img {
+      width: 100%;
+      max-width: 350px;
+      max-height: 45.907px;
+      aspect-ratio: 345.463 / 45.312;
+    }
+  }
+
+  &__name {
+    width: 100%;
+    aspect-ratio: 1162 / 142.2;
+  }
+
+  &__illustration {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 871 / 305;
+
+    // 元画像（4:3）の上 27% あたりを切り出す（Figma の top: -31.19% に相当）
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 27.3%;
+    }
+  }
+}
+
+// ---------- プロフィール ----------
+.p-profile {
+  padding-block: var(--section-py);
+
+  @include sp { padding: 80px 20px; }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 242px;
+    max-width: 1325px;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+
+    @include sp { flex-direction: column; gap: 32px; padding-inline: 0; }
+  }
+
+  &__heading {
+    flex-shrink: 0;
+
+    @include sp { width: 100%; padding-inline: 64px; }
+
+    img {
+      width: 487px;
+      height: 195px;
+      object-fit: contain;
+
+      @include sp { width: 100%; height: auto; aspect-ratio: 487 / 195; }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    min-width: 0;
+
+    @include sp { flex: none; width: 100%; }
+
+    .c-button { max-width: 594px; }
+  }
+
+  &__text {
+    width: 100%;
+    color: var(--color-text-body);
+    font-size: 20px;
+
+    @include sp { font-size: 12px; }
+    font-weight: 500;
+    line-height: 2.4;
+    text-align: justify;
+  }
+}
+
+// ---------- MY WORK ----------
+.p-works {
+  display: flex;
+  flex-direction: column;
+  gap: var(--panel-gap);
+  scroll-margin-top: 0;
+
+  &__header {
+    padding: 10px;
+    font-family: var(--font-display);
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include sp { padding-inline: 0; font-size: 20px; }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--panel-gap);
+
+    @include sp { grid-template-columns: 1fr; gap: 10px; }
+  }
+}

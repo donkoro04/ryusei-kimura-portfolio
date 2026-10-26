@@ -1,0 +1,29 @@
+// ハッシュタグ（作品カード：S / 作品詳細：L）
+.c-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+
+  &--l { gap: 16px; }
+}
+
+.c-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid var(--color-tag);
+  border-radius: var(--radius-pill);
+  color: var(--color-tag);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  &--l {
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}

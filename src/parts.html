@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- @include head -->
+  <title>共通パーツ確認 | RYUSEI KIMURA</title>
+  <meta name="robots" content="noindex">
+  <script type="module" src="./js/main.js"></script>
+</head>
+<body>
+  <div class="l-page">
+    <!-- @include header:home -->
+
+    <main class="l-main">
+      <div class="l-panel l-panel--first p-parts">
+        <h1 class="p-parts__title">共通パーツ確認ページ</h1>
+
+        <section class="p-parts__item">
+          <p class="p-parts__label">Color tokens</p>
+          <div class="p-parts__row">
+            <div class="p-parts__swatch"><span style="background:var(--color-bg)"></span><span>--color-bg #000</span></div>
+            <div class="p-parts__swatch"><span style="background:var(--color-surface)"></span><span>--color-surface #f0f0f0</span></div>
+            <div class="p-parts__swatch"><span style="background:var(--color-text-body)"></span><span>--color-text-body #212121</span></div>
+            <div class="p-parts__swatch"><span style="background:var(--color-text-sub)"></span><span>--color-text-sub #504e4e</span></div>
+            <div class="p-parts__swatch"><span style="background:var(--color-text-muted)"></span><span>--color-text-muted #ababab</span></div>
+            <div class="p-parts__swatch"><span style="background:var(--color-tag)"></span><span>--color-tag #595555</span></div>
+            <div class="p-parts__swatch"><span style="background:var(--color-button)"></span><span>--color-button #dfdfdf</span></div>
+            <div class="p-parts__swatch"><span style="background:var(--color-badge-bg)"></span><span>--color-badge-bg #d5d5d5</span></div>
+            <div class="p-parts__swatch"><span style="background:var(--color-ryuku)"></span><span>--color-ryuku #2a5083</span></div>
+          </div>
+        </section>
+
+        <section class="p-parts__item">
+          <p class="p-parts__label">.c-button（More）— hover で背景が 559×51 に縮む</p>
+          <div style="width:594px"><a class="c-button" href="#">More</a></div>
+        </section>
+
+        <section class="p-parts__item">
+          <p class="p-parts__label">.c-tag / .c-tag--l</p>
+          <ul class="c-tag-list"><li class="c-tag">＃クライアントワークス</li><li class="c-tag">＃Webデザイン</li></ul>
+          <ul class="c-tag-list c-tag-list--l"><li class="c-tag c-tag--l">#クライアントワークス</li><li class="c-tag c-tag--l">#Webデザイン</li></ul>
+        </section>
+
+        <section class="p-parts__item">
+          <p class="p-parts__label">.c-section-heading（About）</p>
+          <h2 class="c-section-heading"><span class="c-section-heading__en">skill</span><span class="c-section-heading__ja">スキルについて</span></h2>
+        </section>
+
+        <section class="p-parts__item">
+          <p class="p-parts__label">.c-heading-block（作品詳細）</p>
+          <h2 class="c-heading-block"><span class="c-heading-block__title">課題</span><span class="c-heading-block__en">Task</span></h2>
+        </section>
+
+        <section class="p-parts__item">
+          <p class="p-parts__label">.c-item-heading（補足＋36px 見出し）</p>
+          <h3 class="c-item-heading"><span class="c-item-heading__sub">3つの</span>予約サイトの統合</h3>
+        </section>
+
+        <section class="p-parts__item">
+          <p class="p-parts__label">.c-number-badge / --pill</p>
+          <div class="p-parts__row">
+            <span class="c-number-badge">01</span>
+            <span class="c-number-badge c-number-badge--pill">Episode01</span>
+          </div>
+        </section>
+
+        <section class="p-parts__item">
+          <p class="p-parts__label">.c-scroll-indicator</p>
+          <a class="c-scroll-indicator" href="#">
+            <span>Scroll</span>
+            <span class="c-scroll-indicator__arrow" aria-hidden="true"><img src="./assets/img/scroll-arrow.svg" alt="" width="18" height="17"></span>
+          </a>
+        </section>
+
+        <section class="p-parts__item">
+          <p class="p-parts__label">.c-card-work（658px）</p>
+          <div class="p-parts__card">
+            <a class="c-card-work" href="#">
+              <div class="c-card-work__image"><img src="./assets/img/card-sukusuku.png" alt="" width="1200" height="787"></div>
+              <div class="c-card-work__body">
+                <h3 class="c-card-work__title">架空サイト　すくすく</h3>
+                <ul class="c-tag-list"><li class="c-tag">＃クライアントワークス</li><li class="c-tag">＃Webデザイン</li></ul>
+              </div>
+            </a>
+          </div>
+        </section>
+        <section class="p-parts__item">
+          <p class="p-parts__label">SP（424px）：l-header / p-work-outline / p-work-task__item / l-footer</p>
+          <iframe class="p-parts__frame" src="./parts-sp.html" title="SP 版の共通パーツ" width="424" height="2000"></iframe>
+        </section>
+      </div>
+    </main>
+
+    <!-- @include footer -->
+  </div>
+</body>
+</html>

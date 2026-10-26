@@ -1,0 +1,56 @@
+@use "../foundation/mixins" as *;
+
+// スキルカード（About）
+.c-skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+  max-width: 340px;
+
+  @include sp { gap: 32px; width: auto; max-width: 518px; }
+
+  &__visual {
+    width: 100%;
+    padding-inline: 54px;
+
+    @include sp { padding-inline: 24px; }
+  }
+
+  &__icon {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--radius-l);
+    object-fit: cover;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__name {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    @include sp { font-size: 24px; }
+  }
+
+  &__years,
+  &__text {
+    font-size: 16px;
+    line-height: 2;
+
+    @include sp { font-size: 12px; }
+  }
+}

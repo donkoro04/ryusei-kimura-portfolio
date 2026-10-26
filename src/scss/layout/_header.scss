@@ -1,0 +1,44 @@
+@use "../foundation/mixins" as *;
+
+.l-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: -1px; // 直下のパネルとの継ぎ目を消す
+  background: var(--color-surface);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--header-max);
+    margin-inline: auto;
+    padding: 32px var(--gutter);
+
+    @include sp { padding: 32px 20px; }
+  }
+
+  &__brand {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+
+    @include sp { padding: 0; }
+  }
+
+  // hover：206.7×25.4 → 223×28 に拡大（Figma c-logo state=hover）
+  &__logo {
+    transition: scale .25s cubic-bezier(.2, .7, .2, 1);
+
+    &--full { width: 206.733px; height: 25.419px; }
+    &--compact { display: none; width: 31.637px; height: 22.656px; }
+
+    @include sp {
+      &--full { display: none; }
+      &--compact { display: block; }
+    }
+  }
+
+  &__brand:hover &__logo { scale: 1.08 1.1; }
+}

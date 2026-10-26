@@ -1,0 +1,27 @@
+@use "../foundation/mixins" as *;
+
+// 和文タイトル＋英字サブの見出し（作品詳細）
+.c-heading-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+
+  &__title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    @include sp { font-size: 20px; }
+  }
+
+  &__en {
+    color: var(--color-text-muted);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.8;
+    white-space: nowrap;
+
+    @include sp { font-size: 12px; }
+  }
+}

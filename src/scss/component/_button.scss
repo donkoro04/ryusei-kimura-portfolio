@@ -1,0 +1,28 @@
+// More ボタン
+// hover：背景が 594×54 → 559×51 に縮む（Figma c-button state=hover）。文字の大きさは変えない
+.c-button {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 89px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: var(--radius-l);
+    background: var(--color-button);
+    transition: scale .25s cubic-bezier(.2, .7, .2, 1);
+  }
+
+  &:hover::before { scale: .94 .944; }
+}

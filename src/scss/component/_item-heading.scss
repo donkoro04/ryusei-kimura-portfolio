@@ -1,0 +1,19 @@
+@use "../foundation/mixins" as *;
+
+// 補足（16px）＋見出し（36px）の2段見出し
+//   <h3 class="c-item-heading"><span class="c-item-heading__sub">3つの</span>予約サイトの統合</h3>
+.c-item-heading {
+  display: flex;
+  flex-direction: column;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  @include sp { font-size: 24px; }
+
+  &__sub {
+    font-size: 16px;
+
+    @include sp { font-size: 12px; }
+  }
+}

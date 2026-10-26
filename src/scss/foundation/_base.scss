@@ -1,0 +1,40 @@
+@use "mixins" as *;
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-base);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+// SP 版のページデザインがそろうまでは PC レイアウトを維持する
+// （SP 対応済みのページ・確認ページには body.is-responsive を付ける）
+body:not(.is-responsive) { min-width: 1100px; }
+
+:focus-visible { outline: 2px solid #2a5083; outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+// PC / SP で出し分ける短いテキスト（例：カードのタイトル）
+.u-sp { display: none; }
+.u-pc { @include sp { display: none; } }
+.u-sp { @include sp { display: inline; } }
+// SP だけで表示するブロック（例：瑠玖の SP 用スマホ画像）
+.u-sp-block { display: none; }
+.u-sp-block { @include sp { display: block; } }
+
+.u-visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

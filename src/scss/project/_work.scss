@@ -1,0 +1,715 @@
+@use "../foundation/mixins" as *;
+
+// ==========================================================
+// 作品詳細（居酒屋瑠玖／すくすく／ヒグマ 共通）
+// ==========================================================
+
+// 各セクション共通（上下 120px／見出しと本文の間 64px）
+.p-work-section {
+  padding-block: var(--section-py);
+
+  @include sp { padding-block: 80px; }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
+
+    @include sp { gap: 32px; }
+
+    &--task-gap { @include sp { gap: 40px; } } // 瑠玖 課題（SP）
+
+    // SP でも左右 40px（コンセプト）
+    &--wide { @include sp { padding-inline: 40px; } }
+  }
+}
+
+// 本文（16px／行間2／両端揃え）
+//   --medium：太さ 500　--black：文字色 #000　--lh-24：行間 24px（ヒグマのアプローチ）
+.p-work-text {
+  color: var(--color-text-body);
+  font-size: 16px;
+  line-height: 2;
+  text-align: justify;
+
+  &--medium { font-weight: 500; }
+  &--black  { color: var(--color-text); }
+  &--lh-24  { line-height: 24px; }
+
+  @include sp { font-size: 12px; line-height: 2; }
+}
+
+// 画像（角丸16px）。比率は style="--ar: 横 / 縦" で指定
+.p-work-image {
+  width: 100%;
+  aspect-ratio: var(--ar, auto);
+  object-fit: cover;
+
+  &--rounded { border-radius: var(--radius-l); }
+  &--contain { object-fit: contain; }
+}
+
+// 画像が未支給の枠
+.p-work-placeholder {
+  width: 100%;
+  aspect-ratio: 1052 / 428;
+  border-radius: var(--radius-l);
+  background: var(--color-placeholder);
+}
+
+// 画像を横に並べる（等幅）
+.p-work-image-row {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+
+  > * { flex: 1 1 0; min-width: 0; }
+
+  @include sp { flex-direction: column; gap: 16px; }
+}
+
+// 画像の縦積み
+.p-work-media {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+// ---------- 概要 ----------
+.p-work-outline {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding-block: var(--section-py);
+
+  @include sp { padding-block: 80px; }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    @include sp { gap: 64px; padding-inline: 40px; }
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include sp { .c-tag--l { font-size: 12px; } }
+  }
+
+  &__summary {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    @include sp { font-size: 24px; }
+  }
+
+  // リード文（瑠玖：Regular／行間1.8、すくすく・ヒグマ：Medium／行間2 = --loose）
+  &__lead {
+    font-size: 20px;
+    line-height: 1.8;
+    text-align: justify;
+
+    &--loose { font-weight: 500; line-height: 2; }
+
+    @include sp { font-size: 14px; font-weight: 400; line-height: 1.8; }
+    &--loose { @include sp { font-size: 12px; font-weight: 500; line-height: 2; } }
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 80px;
+    max-width: 808px;
+    margin: 0;
+
+    // SP：Figma の書き出し値は 80px 24px だが、画面上の間隔は縦横とも 24px
+    @include sp { gap: 24px; }
+  }
+
+  &__meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 180px;
+
+    &--period { width: 104px; }
+    &--wide   { width: 180px; }
+  }
+
+  &__meta-label {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    white-space: nowrap;
+
+    @include sp { font-size: 14px; }
+  }
+
+  &__meta-value {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+
+    @include sp { font-size: 12px; }
+  }
+
+  &__tools {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+
+    img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+  }
+
+  &__members {
+    padding-left: 21px;
+    list-style: decimal;
+    white-space: nowrap;
+
+    @include sp { padding-left: 18px; }
+  }
+
+  // メインビジュアル（瑠玖は画像未支給のためキーカラーで表示）
+  &__visual {
+    width: 100%;
+    aspect-ratio: 1925 / 600;
+    background: var(--color-ryuku);
+
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+}
+
+// ---------- ストーリー（瑠玖） ----------
+.p-work-story {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+
+  &__episode {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+
+    @include sp { gap: 24px; }
+
+    .c-number-badge--pill { @include sp { font-size: 12px; } }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 1.8px;
+
+    @include sp { font-size: 24px; letter-spacing: 1.2px; }
+  }
+
+  &__text {
+    color: var(--color-text-body);
+    font-size: 16px;
+    line-height: 1.8;
+
+    @include sp { font-size: 12px; }
+  }
+}
+
+// ---------- 番号付きの要点（すくすくの課題／ヒグマのきっかけ） ----------
+.p-work-point {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+}
+
+// 見出し＋本文＋図版のまとまりを縦に並べる（ノベルティのリサーチ／購買行動）
+.p-work-list {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  width: 100%;
+
+  @include sp { gap: 80px; }
+}
+
+.p-work-item {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+
+  @include sp { gap: 40px; }
+}
+
+// 試作写真（ノベルティ）：濃い地に収める版と、縦長写真を -90° 回転して横長枠に収める版
+.p-work-photo {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+
+  @include sp { flex: none; width: 100%; }
+  overflow: hidden;
+  aspect-ratio: 512 / 402;
+  border-radius: var(--radius-l);
+
+  &--dark {
+    background: #1e1e1e;
+
+    img {
+      position: absolute;
+      top: 3.01%;
+      left: 11.12%;
+      width: 77.92%;
+      height: 93.98%;
+      object-fit: contain;
+    }
+  }
+
+  &--rotate {
+    container-type: size;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100cqh;
+      max-width: none;
+      height: 100cqw;
+      object-fit: cover;
+      transform: translate(-50%, -50%) rotate(-90deg);
+    }
+  }
+}
+
+// 結果（ノベルティ）
+.p-work-result {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    @include sp { font-size: 24px; }
+  }
+}
+
+// 番号なしの単体ブロック（ヒグマの課題）
+.p-work-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+// ---------- 課題（瑠玖：テキスト＋画像） ----------
+.p-work-task {
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+  width: 100%;
+
+  @include sp { gap: 120px; }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 106px;
+
+    @include sp { flex-direction: column; gap: 40px; }
+  }
+
+  &__content {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    min-width: 0;
+
+    @include sp { flex: none; width: 100%; gap: 24px; }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    @include sp { font-size: 24px; }
+  }
+
+  &__desc {
+    color: var(--color-text-body);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2;
+    text-align: justify;
+
+    @include sp { font-size: 12px; }
+  }
+
+  &__image {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    aspect-ratio: 517 / 714;
+
+    @include sp { flex: none; width: 100%; }
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+// ---------- コンセプト ----------
+.p-work-concept {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+
+  &__message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 43px 62px;
+    border-radius: var(--radius-l);
+    background: var(--color-text);
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    white-space: nowrap;
+
+    @include sp { padding: 40px 32px; font-size: 20px; white-space: normal; }
+  }
+
+  // 本文（すくすく・ヒグマ：Medium、瑠玖：Regular＋字間 0.8px = --tracking）
+  &__text {
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2;
+    text-align: justify;
+
+    @include sp { font-size: 12px; font-weight: 400; }
+
+    &--tracking {
+      color: var(--color-text-body);
+      font-weight: 400;
+      letter-spacing: .8px;
+    }
+  }
+}
+
+// ---------- ターゲット ----------
+.p-work-target {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  width: 100%;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &__label {
+    color: var(--color-text-sub);
+    font-size: 14px;
+
+    @include sp { font-size: 12px; }
+  }
+
+  &__title {
+    font-size: 36px;
+    letter-spacing: 1.8px;
+
+    @include sp { font-size: 24px; letter-spacing: 1.2px; }
+
+    &--plain {
+      letter-spacing: 0;
+
+      @include sp { letter-spacing: 0; }
+    }
+  }
+
+  &__text {
+    color: var(--color-text-body);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2;
+    text-align: justify;
+
+    @include sp { font-size: 12px; }
+  }
+
+  &__strength {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @include sp { gap: 40px; }
+  }
+
+  &__gallery {
+    display: flex;
+    gap: 28px;
+
+    @include sp { flex-direction: column; gap: 16px; }
+
+    img {
+      flex: 1 1 0;
+      min-width: 0;
+      aspect-ratio: 512 / 402;
+
+      @include sp { flex: none; width: 100%; }
+      border-radius: var(--radius-l);
+      object-fit: cover;
+    }
+  }
+}
+
+// ---------- アプローチ ----------
+.p-work-approach {
+  display: flex;
+  flex-direction: column;
+  gap: 240px;
+  width: 100%;
+
+  &--gap-120 { gap: 120px; }
+  &--gap-160 { gap: 160px; }
+
+  @include sp { gap: 80px; }
+  &--sp-gap-120 { @include sp { gap: 120px; } } // 瑠玖・ヒグマの SP
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    // スマホモックアップ＋テキスト（瑠玖）
+    &--row {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+
+      @include sp { flex-direction: column; align-items: stretch; gap: 40px; }
+    }
+
+    // 画像＋テキストの左右分割（すくすく）
+    &--split {
+      flex-direction: row;
+      align-items: center;
+      gap: 106px;
+
+      > * { flex: 1 1 0; min-width: 0; }
+
+      // SP：テキストが先、画像が後の縦並び
+      @include sp {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 40px;
+
+        > * { flex: none; }
+        > img { order: 1; }
+      }
+    }
+
+    &--h-402 {
+      height: 402px; // すくすく：行の高さを Figma に合わせて固定
+
+      @include sp { height: auto; }
+    }
+
+    @include sp { gap: 40px; }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+
+    &--narrow {
+      width: 453px;
+
+      @include sp { width: 100%; }
+    }
+
+    // 番号を見出しの上に置く版（すくすくの分割レイアウト）
+    &--stack { gap: 32px; }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .c-item-heading { @include sp { white-space: nowrap; } }
+  }
+
+  &__text {
+    color: var(--color-text-body);
+    font-size: 16px;
+    line-height: 2;
+    text-align: justify;
+
+    &--medium { font-weight: 500; }
+
+    @include sp { font-size: 12px; }
+  }
+
+  &__diagram {
+    width: 100%;
+    aspect-ratio: 4096 / 2312;
+    object-fit: cover;
+  }
+
+  &__style-guide {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    @include sp { gap: 16px; }
+  }
+
+  &__colors {
+    display: flex;
+    gap: 24px;
+
+    @include sp { flex-direction: column; gap: 16px; }
+
+    img {
+      flex: 1 1 0;
+      min-width: 0;
+      aspect-ratio: 514 / 428;
+      border-radius: var(--radius-l);
+      object-fit: cover;
+    }
+  }
+
+  &__typography {
+    width: 100%;
+    aspect-ratio: 1052 / 428;
+    border-radius: var(--radius-l);
+    object-fit: cover;
+  }
+}
+
+// ---------- 実際のデザイン ----------
+// Figma でセクションの高さが固定されている箇所（内容は上下中央）
+//   <section class="p-work-section p-work-section--fixed" style="--min-h: 1244.236px">
+.p-work-section--fixed {
+  display: flex;
+  align-items: center;
+  min-height: var(--min-h);
+
+  > .l-container { flex: 1; }
+
+  @include sp { min-height: 0; }
+}
+
+.p-work-design {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  width: 100%;
+
+  @include sp { gap: 32px; }
+
+  &__gallery {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    &--sub {
+      width: 684px;
+
+      @include sp { width: 100%; }
+    }
+  }
+
+  &__screen {
+    flex: 1 1 0;
+    min-width: 0;
+    aspect-ratio: var(--ar);
+    object-fit: cover;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    border: 0;
+    background: var(--color-divider);
+  }
+}

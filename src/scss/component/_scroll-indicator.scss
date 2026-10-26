@@ -1,0 +1,40 @@
+@use "../foundation/mixins" as *;
+
+// Scroll（矢印が上下にゆれる：Figma のモーション 2s / 0→10px→0）
+.c-scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 55px;
+  padding-block: 16px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 24px; // Figma の行高（normal）に合わせて固定
+  text-transform: uppercase;
+
+  @include sp { font-size: 12px; line-height: normal; }
+
+  &__arrow {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    rotate: 180deg;
+    animation: c-scroll-indicator 2s linear infinite;
+
+    img {
+      position: absolute;
+      inset: 14.29% 17.14% 25% 17.14%;
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+// 180°回転しているため、下へ動かすには translate を負方向にする
+@keyframes c-scroll-indicator {
+  0%   { translate: 0 0;     animation-timing-function: ease-out; }
+  40%  { translate: 0 -10px; animation-timing-function: ease-out; }
+  80%  { translate: 0 0; }
+  100% { translate: 0 0; }
+}

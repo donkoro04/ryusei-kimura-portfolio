@@ -1,0 +1,25 @@
+// FLOCSS
+@use "foundation/variables";
+@use "foundation/reset";
+@use "foundation/base";
+
+@use "layout/page";
+@use "layout/header";
+@use "layout/footer";
+
+@use "component/global-nav";
+@use "component/button";
+@use "component/tag";
+@use "component/section-heading";
+@use "component/heading-block";
+@use "component/item-heading";
+@use "component/number-badge";
+@use "component/card-work";
+@use "component/scroll-indicator";
+@use "component/skill-card";
+@use "component/device-mockup";
+
+@use "project/home";
+@use "project/about";
+@use "project/work";
+@use "project/parts";

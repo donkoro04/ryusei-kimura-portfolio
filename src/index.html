@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- @include head -->
+  <title>RYUSEI KIMURA | Webデザイナー ポートフォリオ</title>
+  <meta name="description" content="北海道情報大学在学中のWebデザイナー 木村竜生のポートフォリオサイトです。">
+  <script type="module" src="./js/main.js"></script>
+</head>
+<body class="is-responsive">
+  <div class="l-page">
+    <!-- @include header:home -->
+
+    <main class="l-main">
+      <section class="l-panel l-panel--first p-hero" aria-label="メインビジュアル">
+        <div class="p-hero__inner">
+          <div class="p-hero__content">
+            <h1 class="p-hero__heading">
+              <span class="p-hero__occupation"><img src="./assets/img/hero-occupation.svg" alt="WEBDESIGNER" width="345" height="45"></span>
+              <img class="p-hero__name" src="./assets/img/hero-name.svg" alt="RYUSEI KIMURA" width="1082" height="132">
+            </h1>
+            <div class="p-hero__illustration">
+              <img src="./assets/img/hero-illustration.png" alt="" width="1200" height="900">
+            </div>
+          </div>
+          <a class="c-scroll-indicator" href="#profile">
+            <span>Scroll</span>
+            <span class="c-scroll-indicator__arrow" aria-hidden="true"><img src="./assets/img/scroll-arrow.svg" alt="" width="18" height="17"></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="l-panel p-profile" id="profile" aria-labelledby="profile-heading">
+        <div class="p-profile__inner">
+          <h2 class="p-profile__heading" id="profile-heading">
+            <img src="./assets/img/profile-heading.png" alt="I'M RYUSEI KIMURA" width="1200" height="321">
+          </h2>
+          <div class="p-profile__body">
+            <div class="p-profile__text">
+              <p>現在、北海道情報大学に在学中。</p>
+              <p>大学の授業きっかけにウェブデザインに興味をもち、プロジェクト活動を通してUI／UXデザインを学べる安田研究室に参加しています。安田研究室で培った課題解決力やデザイン力を活かし、人々の目に止まり自然に溶け込むようなデザイン設計ができるデザイナーを目指しています。</p>
+            </div>
+            <a class="c-button" href="./about.html">More</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-works" id="works" aria-labelledby="works-heading">
+        <h2 class="l-panel p-works__header" id="works-heading">MY Work</h2>
+        <ul class="p-works__list">
+          <li>
+            <a class="c-card-work" href="./works/ryuku.html">
+              <div class="c-card-work__image c-card-work__image--ryuku"></div>
+              <div class="c-card-work__body">
+                <h3 class="c-card-work__title">居酒屋瑠玖　<span class="u-pc">サイト</span>リニューアル</h3>
+                <ul class="c-tag-list">
+                  <li class="c-tag">＃クライアントワークス</li>
+                  <li class="c-tag">＃Webデザイン</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="c-card-work" href="./works/sukusuku.html">
+              <div class="c-card-work__image"><img src="./assets/img/card-sukusuku.png" alt="" width="1200" height="787" loading="lazy"></div>
+              <div class="c-card-work__body">
+                <h3 class="c-card-work__title">架空サイト　すくすく</h3>
+                <ul class="c-tag-list">
+                  <li class="c-tag">＃クライアントワークス</li>
+                  <li class="c-tag">＃Webデザイン</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="c-card-work" href="./works/higuma.html">
+              <div class="c-card-work__image"><img src="./assets/img/card-higuma.png" alt="" width="1200" height="787" loading="lazy"></div>
+              <div class="c-card-work__body">
+                <h3 class="c-card-work__title">北海道ヒグマ問題解決サイト</h3>
+                <ul class="c-tag-list">
+                  <li class="c-tag">＃学内コンテスト</li>
+                  <li class="c-tag">＃Webデザイン</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="c-card-work" href="./works/novelty.html">
+              <div class="c-card-work__image"><img src="./assets/img/card-novelty.png" alt="" width="1200" height="751" loading="lazy"></div>
+              <div class="c-card-work__body">
+                <h3 class="c-card-work__title">ノベルティ制作</h3>
+                <ul class="c-tag-list">
+                  <li class="c-tag">＃自主制作</li>
+                  <li class="c-tag">＃Webデザイン</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- @include footer -->
+  </div>
+</body>
+</html>

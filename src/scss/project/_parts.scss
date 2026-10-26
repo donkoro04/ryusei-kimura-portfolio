@@ -1,0 +1,33 @@
+// 共通パーツ確認ページ専用（本番ページでは使わない）
+.p-parts {
+  padding: 80px var(--gutter);
+
+  &__title { font-size: 32px; font-weight: 700; margin-bottom: 48px; }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-block: 40px;
+    border-top: 1px solid var(--color-divider);
+  }
+
+  &__label {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    font-family: ui-monospace, monospace;
+  }
+
+  &__row { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+
+  &__swatch {
+    display: flex; flex-direction: column; gap: 6px;
+    width: 120px; font-size: 12px;
+
+    span:first-child { height: 64px; border-radius: var(--radius-s); border: 1px solid var(--color-divider); }
+  }
+
+  &__card { width: 658px; }
+
+  &__frame { border: 1px solid var(--color-divider); border-radius: var(--radius-s); background: var(--color-bg); }
+}

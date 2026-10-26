@@ -1,0 +1,8 @@
+// ブレークポイント（SP：767px 以下）
+// SP デザインのあるページ（body.is-responsive）にだけ効かせる。
+// SP 未対応のページは PC レイアウト（min-width: 1100px）のまま表示される。
+@mixin sp {
+  @media (max-width: 767px) {
+    .is-responsive & { @content; }
+  }
+}

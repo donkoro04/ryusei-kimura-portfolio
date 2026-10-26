@@ -1,0 +1,71 @@
+@use "../foundation/mixins" as *;
+
+// 作品カード（トップ MY WORK）
+// hover（Figma p-card-work state=Hover）：背景 黒／タイトル 白／タグ #c3c1c1
+// Figma に遷移の指定はないため、0.4s のフェードで切り替える
+.c-card-work {
+  --card-transition: .4s cubic-bezier(.2, .7, .2, 1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  aspect-ratio: 658 / 637;
+  padding: 40px;
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+  transition: background-color var(--card-transition);
+
+  @include sp {
+    aspect-ratio: auto;
+    padding: 20px;
+  }
+
+  &__image {
+    overflow: hidden;
+    aspect-ratio: 578 / 382;
+    border-radius: var(--radius-s);
+
+    // 画像未支給：キーカラーの塗りで表示（Figma どおり）
+    &--ryuku { background: var(--color-ryuku); }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.6;
+    transition: color var(--card-transition);
+
+    @include sp { font-size: 24px; }
+  }
+
+  .c-tag {
+    transition:
+      color var(--card-transition),
+      border-color var(--card-transition);
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-text);
+
+    .c-card-work__title { color: #fff; }
+
+    .c-tag {
+      border-color: var(--color-tag-inverse);
+      color: var(--color-tag-inverse);
+    }
+  }
+}

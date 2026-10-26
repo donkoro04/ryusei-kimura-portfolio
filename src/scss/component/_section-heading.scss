@@ -1,0 +1,26 @@
+@use "../foundation/mixins" as *;
+
+// 英字（Alphabet Soup）＋和文サブの見出し（About ページ）
+.c-section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.4;
+
+  &__en {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    @include sp { font-size: 20px; }
+  }
+
+  &__ja {
+    color: var(--color-text-muted);
+    font-size: 16px;
+    font-weight: 600;
+
+    @include sp { font-size: 12px; }
+  }
+}

@@ -1,0 +1,25 @@
+// 番号バッジ（丸：01 / ピル：Episode01）
+.c-number-badge {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-badge-line);
+  border-radius: var(--radius-pill);
+  background: var(--color-badge-bg);
+  color: var(--color-badge-text);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  &--pill {
+    width: auto;
+    height: auto;
+    padding: 8px 16px;
+    background: #d4d4d4;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+}

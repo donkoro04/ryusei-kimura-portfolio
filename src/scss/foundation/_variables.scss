@@ -1,0 +1,38 @@
+// ==========================================================
+// デザイントークン（Figma: ポートフォリオ / PC 1920px）
+// ==========================================================
+:root {
+  // Color
+  --color-bg: #000;            // パネルのすき間に見える背景
+  --color-surface: #f0f0f0;    // パネル
+  --color-text: #000;
+  --color-text-body: #212121;  // 本文
+  --color-text-sub: #504e4e;   // 小見出し（ターゲット など）
+  --color-text-muted: #ababab; // 英字サブ見出し
+  --color-tag: #595555;        // タグの文字・枠
+  --color-tag-inverse: #c3c1c1; // 黒背景上のタグ（作品カード hover）
+  --color-button: #dfdfdf;
+  --color-badge-bg: #d5d5d5;
+  --color-badge-line: #ababab;
+  --color-badge-text: #7e7e7e;
+  --color-divider: #d9d9d9;
+  --color-placeholder: #c4c4c4;
+  --color-ryuku: #2a5083;      // 居酒屋瑠玖のキーカラー（画像未支給の枠）
+
+  // Font
+  // Alphabet Soup は Web フォントがないため、端末にあれば優先し、なければ Bowlby One で代替
+  --font-display: "Alphabet Soup", "AlphabetSoup", "Bowlby One", sans-serif;
+  --font-base: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+
+  // Radius
+  --radius-l: 16px;
+  --radius-s: 8px;
+  --radius-pill: 9999px;
+
+  // Layout
+  --panel-gap: 8px;            // パネル同士のすき間
+  --header-max: 1596px;
+  --content-max: 1052px;       // 本文エリア
+  --gutter: 40px;              // 左右の余白
+  --section-py: 120px;         // セクション上下の余白
+}
