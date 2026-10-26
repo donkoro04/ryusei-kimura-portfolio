@@ -25,7 +25,7 @@
 | | `--color-divider` | #d9d9d9 | 区切り線 |
 | | `--color-placeholder` | #c4c4c4 | モックアップ画面 |
 | | `--color-ryuku` | #2a5083 | 瑠玖の画像未支給枠 |
-| フォント | `--font-display` | Alphabet Soup → Bowlby One | 英字見出し・ナビ・ボタン（大文字表示） |
+| フォント | `--font-display` | alphabet-soup（Adobe Fonts）→ Bowlby One | 英字見出し・ナビ・ボタン（大文字表示） |
 | | `--font-base` | Inter → Hiragino Sans → Noto Sans JP | それ以外すべて |
 | 角丸 | `--radius-l` / `-s` / `-pill` | 16px / 8px / 9999px | パネル・画像 / カード画像 / タグ・バッジ |
 | 余白 | `--panel-gap` | 8px | パネル同士 |
@@ -114,7 +114,7 @@ public/assets/img/    画像（作品ごとにフォルダ。ツールアイコ�
 
 ## Figma と意図的に変えた点
 
-- **Alphabet Soup**：Web フォントがないため Bowlby One で代替（端末にインストール済みならそちらで表示）。ナビ・見出しの幅がわずかに広くなる
+- **Alphabet Soup**：Adobe Fonts の Web プロジェクト（キット ID `gcb7hig`）で読み込み。Adobe Fonts のライセンス上、フォントファイルの同梱（セルフホスト）は不可。読み込みに失敗した場合のみ Bowlby One で表示
 - **About「Illsutrator」**：Figma の誤字を「Illustrator」に修正
 - **作品詳細 Episode01 の本文**：Figma ではテキスト枠（1066px）が本文エリア（972px）からはみ出して末尾が切れているため、本文エリア内で折り返す（ページ全体が約30px高くなる）
 - **Episode01 バッジの文字色**：Figma では #9f9393（02・03 は #7e7e7e）。揺れとみなして #7e7e7e に統一
