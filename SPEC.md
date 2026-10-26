@@ -6,7 +6,7 @@
 - 構成：HTML + Sass（FLOCSS）+ Vite
 - 完了済みページ（PC）：トップ（5086:8347）、About（5067:7292）、作品詳細 居酒屋瑠玖（5043:5157）／すくすく（5048:6371）／ヒグマ（5048:5736）／ノベルティ（5043:5173）
 - コンポーネントライブラリ：Components / BEM + FLOCSS（5133:11289）と照合済み
-- SP（767px 以下・424px 基準）：トップ（5126:10840）／About（5109:10494）／すくすく（5109:10285）／瑠玖（5104:9417）／ヒグマ（5109:9950）／ノベルティ（5104:9046）＝全6ページ対応済み
+- SP（1050px 以下・424px 基準）：トップ（5126:10840）／About（5109:10494）／すくすく（5109:10285）／瑠玖（5104:9417）／ヒグマ（5109:9950）／ノベルティ（5104:9046）＝全6ページ対応済み
 
 ## デザイントークン（`src/scss/foundation/_variables.scss`）
 
@@ -85,7 +85,7 @@
 
 ### SP 版の共通パーツ（ライブラリの Mobile）
 
-`l-header`（RK ロゴ）／`l-footer`／`p-work-outline`／`p-work-task__item` は 767px 以下で SP 表示に切り替わる。
+`l-header`（RK ロゴ）／`l-footer`／`p-work-outline`／`p-work-task__item` は 1050px 以下で SP 表示に切り替わる。
 確認は `parts.html` 下部（424px 幅で `parts-sp.html` を表示）。
 SP 対応済みのページは `<body class="is-responsive">`。`@include sp` のスタイルはこのクラスがあるページにだけ効く
 （`foundation/_mixins.scss`）。未対応ページは `body { min-width: 1100px }` で PC 表示を保つ。
