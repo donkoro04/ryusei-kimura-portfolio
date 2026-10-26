@@ -5,10 +5,10 @@
     display: flex;
     align-items: center;
     gap: 16px;
-
-    // 代替フォント（Bowlby One）は Alphabet Soup より幅が広いため、SP は余白を詰めて 1 行に収める
-    @include sp { gap: 8px; }
   }
+
+  // SP では Home を出さない（ロゴでトップに戻れるため）
+  &__home { @include sp { display: none; } }
 
   &__item {
     display: flex;
@@ -24,7 +24,7 @@
     white-space: nowrap;
     transition: background-color .2s, color .2s;
 
-    @include sp { padding-inline: 16px; font-size: 16px; }
+    @include sp { font-size: 16px; }
 
     &:hover {
       background: var(--color-text);
