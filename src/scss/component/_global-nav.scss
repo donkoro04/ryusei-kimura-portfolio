@@ -26,9 +26,10 @@
 
     @include sp { font-size: 16px; }
 
+    // hover：黒地に白文字（Figma c-nav-link state=Hover）
     &:hover {
       background: var(--color-text);
-      color: var(--color-surface);
+      color: #fff;
     }
   }
 }

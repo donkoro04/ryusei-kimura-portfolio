@@ -63,6 +63,17 @@
     background: var(--color-placeholder);
   }
 
+  // 画面中央の文字（Figma：現在製作中）
+  &__label {
+    top: 421.5px;
+    left: 204.5px;
+    translate: -50% -50%;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.8;
+    white-space: nowrap;
+  }
+
   &__island {
     top: 24px;
     left: 149px;

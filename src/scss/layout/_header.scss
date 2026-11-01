@@ -14,7 +14,7 @@
     margin-inline: auto;
     padding: 32px var(--gutter);
 
-    @include sp { padding: 32px 20px; }
+    @include sp { padding: 16px 20px; }
   }
 
   &__brand {
