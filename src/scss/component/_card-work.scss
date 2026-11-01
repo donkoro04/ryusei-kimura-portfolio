@@ -69,7 +69,12 @@
     @include sp { font-size: 14px; }
   }
 
+  // カード内のタグ：PC 8px 16px／SP 4px 8px（Figma 5086:8437 / 5133:11122）
   .c-tag {
+    padding: 8px 16px;
+
+    @include sp { padding: 4px 8px; }
+
     transition:
       color var(--card-transition),
       border-color var(--card-transition);
