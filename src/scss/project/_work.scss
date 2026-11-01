@@ -153,7 +153,8 @@
     // 列幅を揃えて持つので、画面幅が伸び縮みしても上下の列が必ず揃う（Figma 5170:11572）
     @include sp {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      // 各列 140px 固定（Figma 5104:9253）。2列目の開始位置は 140 + 64px で上下とも揃える
+      grid-template-columns: repeat(2, minmax(0, 140px));
       gap: 24px 64px;
       max-width: none;
     }
@@ -186,6 +187,9 @@
     line-height: 1.6;
 
     @include sp { font-size: 12px; }
+
+    // 期間の値は SP でも 14px（Figma 5104:9253）
+    &--period { @include sp { font-size: 14px; } }
   }
 
   &__tools {
