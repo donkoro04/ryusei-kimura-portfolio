@@ -777,6 +777,8 @@
     object-position: var(--pos, 50% 50%);
 
     &--contain { background: none; object-fit: contain; }
+    // 角丸込みで書き出された画像：プレースホルダーの塗りを外す
+    &--filled { background: none; }
   }
 }
 
