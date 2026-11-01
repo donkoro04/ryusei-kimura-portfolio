@@ -65,6 +65,8 @@
     line-height: 1.8;
     text-align: justify;
     transition: color var(--card-transition);
+
+    @include sp { font-size: 14px; }
   }
 
   .c-tag {
