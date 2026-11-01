@@ -161,6 +161,11 @@
 
     @include sp { grid-template-columns: 1fr; gap: 10px; }
 
+    // 同じ行のカードの高さを揃える（説明文が折り返したカードに合わせて伸ばす）
+    > li { display: flex; }
+
+    > li > .c-card-work { flex: 1 1 auto; min-width: 0; }
+
     // SP の並びは Figma どおり「瑠玖 → すくすく → ヒグマ → ノベルティ」
     // （PC は「瑠玖 → ヒグマ → すくすく → ノベルティ」）
     > li {
