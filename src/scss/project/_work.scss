@@ -830,3 +830,31 @@
     background: var(--color-divider);
   }
 }
+
+// 作品ページ「実際のデザイン」：複数ページの縦長キャプチャを横に並べる（ヒグマ）
+// クリックで原寸画像を別タブで開く
+.p-work-pages {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+
+  @include sp { gap: 8px; }
+
+  &__item {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  &__link {
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius-s);
+    transition: opacity .3s;
+
+    &:hover,
+    &:focus-visible { opacity: .8; }
+  }
+
+  img { width: 100%; height: auto; }
+}
