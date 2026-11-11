@@ -43,6 +43,7 @@
 // 画像（角丸16px）。比率は style="--ar: 横 / 縦" で指定
 .p-work-image {
   width: 100%;
+  height: auto; // video の height 属性より比率を優先
   aspect-ratio: var(--ar, auto);
   object-fit: cover;
 
