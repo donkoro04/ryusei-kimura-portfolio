@@ -978,3 +978,72 @@
     .p-work-compare        { gap: 16px; }
   }
 }
+
+// ==========================================================
+// ノベルティ制作（Figma PC 5043:5173 / SP 5104:9046）
+// ==========================================================
+.p-work-novelty {
+  // 概要：タイトル・リード文は #212121
+  .p-work-outline__summary { color: var(--color-text-body); }
+
+  // リサーチ／ターゲット：見出し・小見出しは PC #212121（SP は黒）
+  .p-work-section--research,
+  .p-work-section--behavior {
+    .c-heading-block__title,
+    .p-work-target__title { color: var(--color-text-body); }
+
+    @include sp {
+      .c-heading-block__title,
+      .p-work-target__title { color: var(--color-text); }
+    }
+  }
+
+  // DECAX の見出しは黒
+  .p-work-section--behavior .p-work-item .p-work-target__title { color: var(--color-text); }
+
+  // リサーチ本文：SP は黒
+  .p-work-section--research .p-work-text { @include sp { color: var(--color-text); } }
+
+  // 「29歳男性。」の句点だけ Medium
+  .p-work-target__period { font-weight: 500; }
+
+  // アプローチ02：画像 517px｜テキスト 349px（すき間 106px）
+  .p-work-approach__item--split-517 {
+    > img { flex: 517 1 0; }
+    > .p-work-approach__content { flex: 349 1 0; }
+
+    @include sp { > img, > .p-work-approach__content { flex: none; } }
+  }
+
+  @include sp {
+    // リサーチは上下 60px、英字サブ見出し 14px
+    .p-work-section--research {
+      padding-block: 60px;
+
+      .c-heading-block__en { font-size: 14px; }
+    }
+
+    // アプローチ・実際のデザインの見出しは 24px
+    .p-work-section--approach .c-heading-block__title,
+    .p-work-section--design .c-heading-block__title { font-size: 24px; }
+
+    // SP の画像・コンセプトの角丸は 8px
+    .p-work-image--rounded,
+    .p-work-photo,
+    .p-work-target__gallery img,
+    .p-work-concept__message { border-radius: var(--radius-s); }
+
+    // コンセプト本文は Medium
+    .p-work-concept__text { font-weight: 500; }
+
+    // 結果：タイトル 24px／本文 Regular
+    .p-work-result__title { font-size: 24px; }
+    .p-work-result .p-work-text { font-weight: 400; }
+
+    // アプローチ03（デモ版）本文は Regular
+    .p-work-section--approach .p-work-approach__item:last-child .p-work-text { font-weight: 400; }
+  }
+}
+
+// SP だけ Medium（ノベルティ キーワード化の本文：PC Regular／SP Medium）
+.p-work-text--sp-medium { @include sp { font-weight: 500; } }
