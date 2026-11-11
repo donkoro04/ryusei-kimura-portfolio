@@ -39,6 +39,7 @@ export default defineConfig({
         sukusuku: resolve(__dirname, 'src/works/sukusuku.html'),
         higuma: resolve(__dirname, 'src/works/higuma.html'),
         novelty: resolve(__dirname, 'src/works/novelty.html'),
+        transit: resolve(__dirname, 'src/works/transit.html'),
         parts: resolve(__dirname, 'src/parts.html'),
         'parts-sp': resolve(__dirname, 'src/parts-sp.html'),
       },

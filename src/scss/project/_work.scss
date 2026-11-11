@@ -858,3 +858,99 @@
 
   img { width: 100%; height: auto; }
 }
+
+// ==========================================================
+// 学生向け交通系アプリ（Figma PC 5290:3800 / SP 5290:3895）
+// ==========================================================
+
+// 概要のリード文：16px／行間2（SP 14px Medium）＋サイトへのリンク
+.p-work-outline__lead--sm {
+  font-size: 16px;
+  line-height: 2;
+
+  @include sp { font-size: 14px; font-weight: 500; line-height: 2; }
+}
+
+.p-work-outline__link {
+  text-decoration: underline;
+  text-underline-position: from-font;
+  overflow-wrap: anywhere;
+  transition: opacity .3s;
+
+  &:hover,
+  &:focus-visible { opacity: .6; }
+}
+
+// メインビジュアル：画像の読み込み前もアプリのキーカラー（#A0E25E）
+.p-work-outline__visual--app { background: #a0e25e; }
+
+// 番号なしの小見出し（調査：ヒューリスティック分析）
+.p-work-subtitle {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  @include sp { font-size: 20px; line-height: 1.4; }
+}
+
+// SP：このページは本文・補足見出しが 14px（ターゲットの本文だけ 16px）
+.p-work-app {
+  @include sp {
+    .p-work-text,
+    .p-work-concept__text,
+    .c-item-heading__sub { font-size: 14px; }
+
+    .p-work-text--sp-16 { font-size: 16px; }
+
+    .p-work-media { gap: 16px; }
+  }
+}
+
+// 実際のデザイン：画面ごとのカード（PC 2列／SP 1列）
+.p-work-features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px 36px;
+  width: 100%;
+
+  @include sp { grid-template-columns: 1fr; gap: 80px; }
+}
+
+.p-work-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+
+  // ラベル（PC：黒枠／SP：黒地に白文字）。ラベル→画像は 40px
+  &__label {
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    border: 1px solid var(--color-text);
+    border-radius: var(--radius-s);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    @include sp {
+      margin-bottom: 0;
+      background: var(--color-text);
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: var(--ar);
+    object-fit: cover;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.8;
+
+    @include sp { font-size: 14px; }
+  }
+}
