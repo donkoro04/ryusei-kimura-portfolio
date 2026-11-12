@@ -1073,7 +1073,7 @@
     }
 
     // 課題：01 は 16px Medium／02 は 14px Regular
-    .p-work-section--task .p-work-task__desc { font-size: 16px; }
+    .p-work-section--task .p-work-task__item:first-child .p-work-task__desc { font-size: 16px; }
     .p-work-task__desc--sp-regular { font-size: 14px; font-weight: 400; }
 
     // コンセプト本文：14px・字間 0.7px
