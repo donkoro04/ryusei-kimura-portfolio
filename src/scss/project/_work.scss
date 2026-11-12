@@ -1047,3 +1047,54 @@
 
 // SP だけ Medium（ノベルティ キーワード化の本文：PC Regular／SP Medium）
 .p-work-text--sp-medium { @include sp { font-weight: 500; } }
+
+// ==========================================================
+// 居酒屋瑠玖：SP（Figma 5104:9417）
+// ==========================================================
+// SP だけ段落に分ける文（PC は1つの段落のまま）。段落のすき間 12px
+.p-work-sp-para {
+  @include sp {
+    display: block;
+
+    & + & { margin-top: 12px; }
+  }
+}
+
+
+.p-work-item--sp-gap-32 { @include sp { gap: 32px; } } // 瑠玖 SEO（SP：見出し→図 32px）
+
+.p-work-ryuku {
+  @include sp {
+    // ストーリー：本文 14px、段落のすき間 12px
+    .p-work-section--story .p-work-text {
+      font-size: 14px;
+
+      > p + p { margin-top: 12px; }
+    }
+
+    // 課題：01 は 16px Medium／02 は 14px Regular
+    .p-work-section--task .p-work-task__desc { font-size: 16px; }
+    .p-work-task__desc--sp-regular { font-size: 14px; font-weight: 400; }
+
+    // コンセプト本文：14px・字間 0.7px
+    .p-work-concept__text--tracking { font-size: 14px; letter-spacing: .7px; }
+
+    // SEO 本文 14px
+    .p-work-section--seo .p-work-text { font-size: 14px; }
+
+    // アプローチ01 の説明文：14px・#212121
+    .p-work-approach__item:first-child > .p-work-approach__content .p-work-text {
+      color: var(--color-text-body);
+      font-size: 14px;
+    }
+
+    // アプローチ02：14px／03：段落のすき間 12px
+    .p-work-approach__text--sp-14 { font-size: 14px; }
+    .p-work-approach__text--sp-paras > p + p { margin-top: 12px; }
+
+    // 画像の角丸は 8px
+    .p-work-image--rounded,
+    .p-work-approach__colors img,
+    .p-work-approach__typography { border-radius: var(--radius-s); }
+  }
+}
