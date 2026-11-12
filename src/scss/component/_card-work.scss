@@ -94,18 +94,8 @@
     }
   }
 
-  // リンクのないカード（ポートフォリオサイト：詳細ページ未作成）は hover で反転させない
-  &--static {
-    &:hover {
-      background: var(--color-surface);
-
-      .c-card-work__title { color: inherit; }
-      .c-card-work__text { color: var(--color-text-body); }
-
-      .c-tag {
-        border-color: var(--color-tag);
-        color: var(--color-tag);
-      }
-    }
+  // 空き枠：中身のない四角。hover で反転させない
+  &--empty {
+    &:hover { background: var(--color-surface); }
   }
 }
