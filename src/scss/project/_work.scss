@@ -1099,12 +1099,11 @@
   }
 }
 
-// 瑠玖 課題01：PC は Regular（SP は Medium のまま。Figma PC 5243:2966 / SP 5104:9759）
-.p-work-task__desc--pc-regular {
-  font-weight: 400;
+// 瑠玖 課題01：本文は Regular（PC・SP とも。Figma PC 5243:2966 / SP 5104:9759）
+.p-work-task__desc--pc-regular { font-weight: 400; }
 
-  @include sp { font-weight: 500; }
-}
+// 瑠玖 アプローチ01 の見出しは #212121（Figma 5261:3616 / 5261:3684）
+.p-work-ryuku .p-work-approach__item:first-child .c-item-heading { color: var(--color-text-body); }
 
 // ==========================================================
 // 北海道ヒグマ問題解決サイト（Figma PC 5048:5736 / SP 5109:9950）
