@@ -1072,8 +1072,9 @@
       > p + p { margin-top: 12px; }
     }
 
-    // 課題：01 は 16px Medium／02 は 14px Regular
-    .p-work-section--task .p-work-task__item:first-child .p-work-task__desc { font-size: 16px; }
+    // 課題：本文は 14px（Figma SP 5104:9700）、箇条書きの字下げ 21px
+    .p-work-section--task .p-work-task__desc { font-size: 14px; }
+    .p-work-section--task .p-work-task__desc ul { padding-left: 21px; }
     .p-work-task__desc--sp-regular { font-size: 14px; font-weight: 400; }
 
     // コンセプト本文：14px・字間 0.7px
