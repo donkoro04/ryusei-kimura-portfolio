@@ -1056,7 +1056,7 @@
   @include sp {
     display: block;
 
-    & + & { margin-top: 12px; }
+    & + .p-work-sp-para { margin-top: 12px; }
   }
 }
 
@@ -1104,4 +1104,42 @@
   font-weight: 400;
 
   @include sp { font-weight: 500; }
+}
+
+// ==========================================================
+// 北海道ヒグマ問題解決サイト（Figma PC 5048:5736 / SP 5109:9950）
+// ==========================================================
+.p-work-outline__lead--regular { font-weight: 400; }
+.p-work-concept__text--regular { color: var(--color-text-body); font-weight: 400; }
+.p-work-approach__item--sp-gap-64 { @include sp { gap: 64px; } }
+
+.p-work-higuma {
+  // ターゲットの見出し・アプローチの見出しは PC #212121（SP は黒）
+  .p-work-target__title,
+  .p-work-section--approach .c-heading-block__title,
+  .p-work-section--approach .c-item-heading { color: var(--color-text-body); }
+
+  @include sp {
+    .p-work-target__title,
+    .p-work-section--approach .c-heading-block__title,
+    .p-work-section--approach .c-item-heading { color: var(--color-text); }
+
+    // 概要のリード文：14px Regular／行間 1.8
+    .p-work-outline__lead { font-size: 14px; font-weight: 400; line-height: 1.8; }
+
+    // 本文：14px（トーンとマナーは 12px）。課題・ターゲットは #212121
+    .p-work-text { font-size: 14px; }
+    .p-work-text--sp-12 { font-size: 12px; }
+    .p-work-text--sp-body { color: var(--color-text-body); }
+    .p-work-text--sp-paras > p + p { margin-top: 12px; }
+
+    // コンセプト本文：12px Regular・黒
+    .p-work-concept__text--regular { color: var(--color-text); }
+
+    // アプローチは上下 120px
+    .p-work-section--approach { padding-block: 120px; }
+
+    // イラストの画像は角丸 8px
+    .p-work-section--approach .p-work-approach__item:first-child .p-work-image--rounded { border-radius: var(--radius-s); }
+  }
 }
