@@ -1091,6 +1091,9 @@
 
     // アプローチ02：14px／03：段落のすき間 12px
     .p-work-approach__text--sp-14 { font-size: 14px; }
+
+    // アプローチ02・03 の本文は SP では Regular（Figma SP 5043:5020）
+    .p-work-approach__text--medium { font-weight: 400; }
     .p-work-approach__text--sp-paras > p + p { margin-top: 12px; }
 
     // 画像の角丸は 8px
