@@ -1143,3 +1143,31 @@
     .p-work-section--approach .p-work-approach__item:first-child .p-work-image--rounded { border-radius: var(--radius-s); }
   }
 }
+
+// ==========================================================
+// 架空サイト「すくすく」（Figma PC 5048:6371 / SP 5109:10285）
+// ==========================================================
+// このページは黒の代わりに #212121（文字・パネル間のすき間・ナビ・コンセプトの帯）
+.p-page-ink-soft {
+  --color-text: #212121;
+  --color-bg: #212121;
+}
+
+.p-work-text--sp-regular { @include sp { font-weight: 400; } }
+
+.p-work-sukusuku {
+  @include sp {
+    // 概要：リード文 14px Regular・行間 2／メンバー 14px
+    .p-work-outline__lead { font-size: 14px; font-weight: 400; line-height: 2; }
+    .p-work-outline__members { padding-left: 21px; font-size: 14px; }
+
+    // ターゲット・コンセプト・アプローチの本文は 14px（課題は 12px のまま）
+    .p-work-target__block .p-work-text,
+    .p-work-approach .p-work-text,
+    .p-work-concept__text { font-size: 14px; }
+
+    // 画像・コンセプトの帯の角丸は 8px
+    .p-work-image--rounded,
+    .p-work-concept__message { border-radius: var(--radius-s); }
+  }
+}
