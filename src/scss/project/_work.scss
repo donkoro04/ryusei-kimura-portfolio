@@ -1089,6 +1089,10 @@
       font-size: 14px;
     }
 
+    // アプローチの本文と画像のすき間は 32px（Figma SP 5043:5020）
+    .p-work-approach__item,
+    .p-work-approach__item--row { gap: 32px; }
+
     // アプローチ02・03：本文 14px（PC・SP とも Regular）／03 は段落のすき間 12px
     .p-work-approach__text--sp-14 { font-size: 14px; }
     .p-work-approach__text--sp-paras > p + p { margin-top: 12px; }
