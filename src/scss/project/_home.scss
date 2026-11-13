@@ -166,11 +166,6 @@
 
     > li > .c-card-work { flex: 1 1 auto; min-width: 0; }
 
-    // 空き枠は SP（1列）では不要なので隠す
-    > li.p-works__empty-slot {
-      @include sp { display: none; }
-    }
-
     // SP の並びは Figma どおり「瑠玖 → すくすく → ヒグマ → ノベルティ」
     // （PC は「瑠玖 → ヒグマ → すくすく → ノベルティ」）
     > li {
@@ -180,6 +175,7 @@
         &:nth-child(4) { order: 4; }
         &:nth-child(5) { order: 5; }
         &:nth-child(6) { order: 6; }
+        &:nth-child(7) { order: 7; }
       }
     }
   }

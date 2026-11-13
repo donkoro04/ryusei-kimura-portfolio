@@ -35,6 +35,7 @@ export default defineConfig({
       input: {
         index: resolve(__dirname, 'src/index.html'),
         about: resolve(__dirname, 'src/about.html'),
+        gallery: resolve(__dirname, 'src/gallery.html'),
         ryuku: resolve(__dirname, 'src/works/ryuku.html'),
         sukusuku: resolve(__dirname, 'src/works/sukusuku.html'),
         higuma: resolve(__dirname, 'src/works/higuma.html'),

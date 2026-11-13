@@ -94,8 +94,53 @@
     }
   }
 
-  // 空き枠：中身のない四角。hover で反転させない
-  &--empty {
-    &:hover { background: var(--color-surface); }
+  // リンクのないカード（ポートフォリオサイト）：hover で反転させない
+  &--static {
+    &:hover {
+      background: var(--color-surface);
+
+      .c-card-work__title { color: inherit; }
+      .c-card-work__text { color: var(--color-text-body); }
+
+      .c-tag {
+        border-color: var(--color-tag);
+        color: var(--color-tag);
+      }
+    }
+  }
+
+  // My Gallery への入口：中央に英字タイトル 80px＋説明 16px（hover は他のカードと同じく反転）
+  &--gallery {
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding-block: 24px;
+    text-align: center;
+
+    @include sp { aspect-ratio: auto; padding-block: 64px; }
+  }
+
+  &__gallery-title {
+    font-family: var(--font-display);
+    font-size: 80px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    transition: color var(--card-transition);
+
+    @include sp { font-size: 40px; }
+  }
+
+  &__gallery-text {
+    font-size: 16px;
+    line-height: 1.8;
+    transition: color var(--card-transition);
+
+    @include sp { font-size: 14px; }
+  }
+
+  &--gallery:hover,
+  &--gallery:focus-visible {
+    .c-card-work__gallery-title,
+    .c-card-work__gallery-text { color: #fff; }
   }
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- @include head -->
+  <title>My Gallery | RYUSEI KIMURA</title>
+  <meta name="description" content="Webデザイナー 木村竜生のポスター・名刺・イラストなどのグラフィック作品をまとめたギャラリーです。">
+  <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/gallery.js"></script>
+</head>
+<body class="is-responsive">
+  <div class="l-page">
+    <!-- @include header:work -->
+
+    <main class="l-main">
+      <section class="l-panel l-panel--first p-gallery" aria-labelledby="gallery-title">
+        <div class="l-container l-container--padded p-gallery__inner">
+          <h1 class="p-gallery__title" id="gallery-title">My Gallery</h1>
+
+          <div class="p-gallery__body">
+            <div class="p-gallery__toolbar">
+              <div class="p-gallery__filters" role="group" aria-label="カテゴリーで絞り込む">
+                <button class="c-category-filter" type="button" data-filter="all" aria-pressed="true">すべて<svg class="c-category-filter__icon" viewBox="0 0 14 9" width="14" height="9" aria-hidden="true"><path d="M1 1.5 7 7.5l6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <button class="c-category-filter" type="button" data-filter="poster" aria-pressed="false">ポスター<svg class="c-category-filter__icon" viewBox="0 0 14 9" width="14" height="9" aria-hidden="true"><path d="M1 1.5 7 7.5l6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <button class="c-category-filter" type="button" data-filter="card" aria-pressed="false">名刺<svg class="c-category-filter__icon" viewBox="0 0 14 9" width="14" height="9" aria-hidden="true"><path d="M1 1.5 7 7.5l6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <button class="c-category-filter" type="button" data-filter="illustration" aria-pressed="false">イラスト<svg class="c-category-filter__icon" viewBox="0 0 14 9" width="14" height="9" aria-hidden="true"><path d="M1 1.5 7 7.5l6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+              <hr class="p-gallery__divider">
+            </div>
+
+            <ul class="p-gallery__list">
+              <li class="c-work-card" data-category="poster">
+                <img class="c-work-card__image" src="./assets/img/gallery/yasuda-lab-poster-1.jpg" alt="安田ラボ説明会のポスター（青）" width="398" height="452" loading="lazy">
+              </li>
+              <li class="c-work-card" data-category="poster">
+                <img class="c-work-card__image" src="./assets/img/gallery/yasuda-lab-poster-2.jpg" alt="安田ラボ単独説明会のポスター（ピンク）" width="398" height="452" loading="lazy">
+              </li>
+              <li class="c-work-card" data-category="card">
+                <img class="c-work-card__image" src="./assets/img/gallery/business-card.jpg" alt="安田研究室の名刺。表面に似顔絵と名前、裏面に YASUDA LAB のロゴ" width="398" height="452" loading="lazy">
+              </li>
+              <li class="c-work-card" data-category="poster">
+                <img class="c-work-card__image" src="./assets/img/gallery/fireworks-poster.jpg" alt="札幌花火大会のポスター" width="398" height="452" loading="lazy">
+              </li>
+              <li class="c-work-card" data-category="illustration">
+                <img class="c-work-card__image" src="./assets/img/gallery/pig-illustration.jpg" alt="ブタのキャラクターのイラスト" width="398" height="452" loading="lazy">
+              </li>
+              <li class="c-work-card" data-category="poster">
+                <img class="c-work-card__image" src="./assets/img/gallery/running-banner.jpg" alt="WCBランニングクラブの入会金0円キャンペーンのバナー" width="398" height="452" loading="lazy">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include footer -->
+  </div>
+</body>
+</html>
