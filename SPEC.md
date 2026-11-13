@@ -248,3 +248,4 @@ public/assets/img/    画像（作品ごとにフォルダ。ツールアイコ�
 
 - My Gallery ページを新設（Figma PC 5403:5481 / SP 5406:5283）：src/gallery.html・js/gallery.js・project/_gallery.scss、画像は public/assets/img/gallery/。カテゴリー（すべて／ポスター／名刺／イラスト）で絞り込み。選択中のボタンは黒地に白文字（Figma に指定なし）。
 - トップ MY WORK（Figma 5086:8347）：空き枠を My Gallery への入口カードに置き換え、7枚目に「ポートフォリオサイト」（詳細ページ未制作のためリンクなし・グレーの画像枠）を追加。瑠玖カードの説明を「(現在進行中)」に。
+- トップ MY WORK（Figma 5086:8347 更新）：「ポートフォリオサイト」のカードを削除（6枚目の My Gallery カードで終わり）。

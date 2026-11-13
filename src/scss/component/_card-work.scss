@@ -94,21 +94,6 @@
     }
   }
 
-  // リンクのないカード（ポートフォリオサイト）：hover で反転させない
-  &--static {
-    &:hover {
-      background: var(--color-surface);
-
-      .c-card-work__title { color: inherit; }
-      .c-card-work__text { color: var(--color-text-body); }
-
-      .c-tag {
-        border-color: var(--color-tag);
-        color: var(--color-tag);
-      }
-    }
-  }
-
   // My Gallery への入口：中央に英字タイトル 80px＋説明 16px（hover は他のカードと同じく反転）
   &--gallery {
     align-items: center;
