@@ -112,7 +112,7 @@
     font-size: 16px;
 
     @include sp {
-      font-size: 12px;
+      font-size: 14px;
 
       > p + p { margin-top: 12px; }
     }
@@ -136,7 +136,7 @@
     line-height: 1.3;
   }
 
-  // SP は段落ごとに 16px あける（Figma 5109:10647）
+  // SP は段落ごとに 12px あける（Figma 5109:10647）
   &__text {
     color: var(--color-text-body);
     font-size: 16px;
@@ -145,7 +145,7 @@
     @include sp {
       font-size: 12px;
 
-      > p + p { margin-top: 16px; }
+      > p + p { margin-top: 12px; }
     }
     text-align: justify;
   }
