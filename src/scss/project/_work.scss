@@ -904,6 +904,18 @@
     .p-work-text--sp-16 { font-size: 16px; }
 
     .p-work-media { gap: 16px; }
+
+    // アプローチ02：SP では本文の下にモックアップ（幅 283px）、すき間 32px（Figma SP 5336:5301）
+    .p-work-approach__item--row { gap: 32px; }
+  }
+}
+
+// モックアップを SP で幅 283px に縮小して、本文の下に表示
+.c-device-mockup--sp-283 {
+  @include sp {
+    zoom: calc(283 / 409);
+    order: 2;
+    align-self: center;
   }
 }
 
