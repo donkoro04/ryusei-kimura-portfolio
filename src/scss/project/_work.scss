@@ -935,7 +935,7 @@
   align-items: flex-start;
   gap: 24px;
 
-  // ラベル（PC：黒枠／SP：黒地に白文字）。ラベル→画像は 40px
+  // ラベル（黒枠）。PC 16px／SP 12px。ラベル→画像は PC 40px／SP 24px
   &__label {
     margin-bottom: 16px;
     padding: 8px 16px;
@@ -945,12 +945,13 @@
     font-weight: 700;
     line-height: 1.4;
 
+    // SP：#212121 の枠線＋文字 12px（Figma SP 5336:5325）
     @include sp {
       margin-bottom: 0;
-      background: var(--color-text);
-      color: #fff;
-      font-size: 16px;
-      line-height: 1.2;
+      border-color: var(--color-text-body);
+      color: var(--color-text-body);
+      font-size: 12px;
+      line-height: normal;
     }
   }
 
@@ -958,6 +959,16 @@
     width: 100%;
     aspect-ratio: var(--ar);
     object-fit: cover;
+
+    // ホーム：SP は縦長の枠（468:521）に、画面を左上に合わせて表示
+    &--home {
+      @include sp { aspect-ratio: 468 / 521; object-position: left top; }
+    }
+
+    // 時刻表：SP は角丸 16px
+    &--rounded-sp {
+      @include sp { border-radius: var(--radius-l); }
+    }
   }
 
   &__text {
