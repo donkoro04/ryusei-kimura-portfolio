@@ -60,12 +60,17 @@
     line-height: 1.4;
   }
 
+  // 自己紹介：PC 16px／SP 14px、行間 2.1。SP は段落ごとに 12px あける（Figma 5090:8567 / 5109:10636）
   &__text {
     color: var(--color-text-body);
-    font-size: 20px;
-    line-height: 2.4;
+    font-size: 16px;
+    line-height: 2.1;
 
-    @include sp { font-size: 14px; }
+    @include sp {
+      font-size: 14px;
+
+      > p + p { margin-top: 12px; }
+    }
   }
 
   &__image {
@@ -106,7 +111,11 @@
   &__motivation-text {
     font-size: 16px;
 
-    @include sp { font-size: 12px; }
+    @include sp {
+      font-size: 12px;
+
+      > p + p { margin-top: 12px; }
+    }
     line-height: 2;
     text-align: justify;
   }
@@ -122,17 +131,22 @@
   &__word {
     font-size: 96px;
 
-    @include sp { font-size: 40px; }
+    @include sp { font-size: 40px; font-weight: 600; }
     font-weight: 700;
     line-height: 1.3;
   }
 
+  // SP は段落ごとに 16px あける（Figma 5109:10647）
   &__text {
     color: var(--color-text-body);
     font-size: 16px;
     line-height: 2.6;
 
-    @include sp { font-size: 12px; }
+    @include sp {
+      font-size: 12px;
+
+      > p + p { margin-top: 16px; }
+    }
     text-align: justify;
   }
 }
