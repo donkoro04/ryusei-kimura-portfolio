@@ -1245,3 +1245,18 @@
     .p-work-concept__message { border-radius: var(--radius-s); }
   }
 }
+
+// ==========================================================
+// PC：16px の本文段落はすべて Regular（Medium 指定を上書き）
+// 見出し・項目名・ラベルの太字はそのまま
+// ==========================================================
+@media (min-width: 1051px) {
+  body .l-main {
+    .p-work-text--medium,
+    .p-work-text--medium p,
+    .p-work-concept__text,
+    .p-work-approach__text--medium,
+    .p-work-task__desc,
+    .p-work-task__desc .p-work-sp-para { font-weight: 400; }
+  }
+}
