@@ -289,6 +289,30 @@
   }
 }
 
+// 交通アプリの課題：番号と見出しを横並び、項目の間 120px、本文→図 60px（Figma 5290:3805）
+.p-work-point--app {
+  gap: 120px;
+
+  @include sp { gap: 80px; }
+
+  .p-work-point__item {
+    gap: 60px;
+
+    @include sp { gap: 32px; }
+  }
+
+  .p-work-point__head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .p-work-point__image {
+    width: 100%;
+    max-width: 956px;
+  }
+}
+
 // 見出し＋本文＋図版のまとまりを縦に並べる（ノベルティのリサーチ／購買行動）
 .p-work-list {
   display: flex;
@@ -896,6 +920,19 @@
 
 // SP：このページは本文・補足見出しが 14px（ターゲットの本文だけ 16px）
 .p-work-app {
+  // 概要のタグは #909090（Figma 5290:3804）
+  .p-work-outline .c-tag {
+    border-color: #909090;
+    color: #909090;
+  }
+
+  // 実際のデザイン：PC は説明文なし（ラベル＋画像のみ）、SP は説明文あり（Figma 5290:3887 / SP 5336:5325）
+  .p-work-feature__text {
+    display: none;
+
+    @include sp { display: block; }
+  }
+
   @include sp {
     .p-work-text,
     .p-work-concept__text,
