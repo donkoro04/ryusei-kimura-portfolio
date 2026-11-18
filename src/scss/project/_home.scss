@@ -84,8 +84,8 @@
 
   @include sp { display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 80px 20px; }
 
-  // PC：左にイラスト（残り幅いっぱい）、右に本文 572px（Figma 5086:8375）
-  // SP：イラスト 252px → 本文（Figma 5126:10978）
+  // PC：左に I'M RYUSEI KIMURA のロゴ 487×195、右に本文 572px（Figma 5086:8375）
+  // SP：猫のイラスト 252px → 本文（Figma 5126:10978）
   &__inner {
     display: flex;
     align-items: stretch;
@@ -93,18 +93,32 @@
     gap: 210px;
     max-width: 1325px;
     margin-inline: auto;
-    padding-inline: var(--gutter);
+    // ロゴは Figma どおり左の余白に少しはみ出す（左端から 17px）
+    padding-inline: 17px var(--gutter);
 
     @include sp { display: contents; }
   }
 
-  &__visual {
-    display: flex;
-    flex: 1 1 0;
-    align-items: center;
+  &__name-art {
+    flex: 0 1 487px;
+    align-self: center;
     min-width: 0;
 
-    @include sp { flex: none; width: 252px; }
+    @include sp { display: none; }
+
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 487 / 195;
+      object-fit: contain;
+    }
+  }
+
+  // 猫のイラストは SP だけ表示
+  &__visual {
+    display: none;
+
+    @include sp { display: flex; align-items: center; width: 252px; }
 
     img {
       width: 100%;
