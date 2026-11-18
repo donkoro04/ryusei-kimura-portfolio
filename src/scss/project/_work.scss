@@ -920,6 +920,16 @@
 
 // SP：このページは本文・補足見出しが 14px（ターゲットの本文だけ 16px）
 .p-work-app {
+  // アプローチ02 の見出しは Semi Bold・行間 2（PC、Figma 5498:22093）
+  .c-item-heading--app-02 {
+    font-weight: 600;
+    line-height: 2;
+
+    @include sp { font-weight: 700; line-height: 1.4; }
+
+    .c-item-heading__sub { font-weight: 700; line-height: 1.4; }
+  }
+
   // 概要のタグは #909090（Figma 5290:3804）
   .p-work-outline .c-tag {
     border-color: #909090;
